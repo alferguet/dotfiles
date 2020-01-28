@@ -1,0 +1,278 @@
+;==========================================================
+;
+;
+;   ██████╗  ██████╗ ██╗  ██╗   ██╗██████╗  █████╗ ██████╗
+;   ██╔══██╗██╔═══██╗██║  ╚██╗ ██╔╝██╔══██╗██╔══██╗██╔══██╗
+;   ██████╔╝██║   ██║██║   ╚████╔╝ ██████╔╝███████║██████╔╝
+;   ██╔═══╝ ██║   ██║██║    ╚██╔╝  ██╔══██╗██╔══██║██╔══██╗
+;   ██║     ╚██████╔╝███████╗██║   ██████╔╝██║  ██║██║  ██║
+;   ╚═╝      ╚═════╝ ╚══════╝╚═╝   ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝
+;
+;
+;   To learn more about how to configure Polybar
+;   go to https://github.com/polybar/polybar
+;
+;   The README contains a lot of information
+;
+;==========================================================
+[colors]
+background = ${xrdb:color0:#222}
+background-alt = ${xrdb:color0:#222}
+
+foreground = ${xrdb:color0:#222}
+foreground-alt = ${xrdb:color5:#222}
+
+shade0 = ${xrdb:color0:#222}
+shade1 = ${xrdb:color1:#222}
+shade2 = ${xrdb:color2:#222}
+shade3 = ${xrdb:color5:#222}
+shade4 = ${xrdb:color7:#222}
+shade5 = ${xrdb:color6:#222}
+shade6 = ${xrdb:color5:#222}
+shade7 = ${xrdb:color4:#222}
+shade8 = ${xrdb:color3:#222}
+
+[bar/top]
+monitor = HDMI-0
+width = 100%
+height = 25
+radius = 0
+fixed-center = true
+border-transparent = true
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+line-size = 0
+line-color = #f00
+
+border-size = 4
+border-color = #00000000
+
+padding-left = 0
+padding-right = 2 
+
+module-margin-left = 1
+module-margin-right = 2
+
+font-0 = Hack:size=8;2
+font-1 = Font Awesome 5 Free:style=Solid:pixelsize=10;3"
+font-2 = siji:pixelsize=10;1
+
+modules-left = bspwm xwindow
+;modules-center
+modules-right = filesystem pulseaudio memory cpu temperature date
+
+tray-position = right
+tray-padding = 2
+;tray-background = #0063ff
+
+wm-restack = bspwm
+;wm-restack = i3
+
+;override-redirect = true
+
+cursor-click = pointer
+cursor-scroll = ns-resize
+
+[module/xwindow]
+type = internal/xwindow
+label = %title:0:50: ...%
+label-padding = 2
+label-foreground = ${colors.shade1}
+label-background = ${colors.shade0}
+
+[module/filesystem]
+type = internal/fs
+interval = 25
+
+mount-0 = /
+mount-1 = /home
+mount-2 = /mnt/storage
+
+format-mounted-foreground = ${colors.shade2}
+format-mounted-background = ${colors.shade0}
+
+label-mounted = %mountpoint% %percentage_used%%
+label-unmounted = %mountpoint% not mounted
+format-mountpoint-foreground = ${colors.shade1}
+
+[module/bspwm]
+type = internal/bspwm
+
+; Only show workspaces defined on the same output as the bar
+; NOTE: The bspwm and XRandR monitor names must match, which they do by default.
+; But if you rename your bspwm monitors with bspc -n this option will no longer
+; behave correctly.
+; Default: true
+pin-workspaces = false
+
+; Output mode flags after focused state label
+; Default: false
+inline-mode = false
+
+; Create click handler used to focus workspace
+; Default: true
+enable-click = true
+
+; Create scroll handlers used to cycle workspaces
+; Default: true
+enable-scroll = true
+
+; Set the scroll cycle direction 
+; Default: true
+reverse-scroll = true
+
+; Use fuzzy (partial) matching on labels when assigning 
+; icons to workspaces
+; Example: code;♚ will apply the icon to all workspaces 
+; containing 'code' in the label
+; Default: false
+fuzzy-match = false
+
+; ws-icon-[0-9]+ = label;icon
+; Note that the label needs to correspond with the bspwm workspace name
+ws-icon-0 = I 
+ws-icon-1 = II
+ws-icon-2 = III 
+ws-icon-3 = IV
+ws-icon-4 = V
+ws-icon-5 = VI
+ws-icon-default = NF
+
+; Available tags:
+;   <label-monitor>
+;   <label-state> - gets replaced with <label-(focused|urgent|occupied|empty)>
+;   <label-mode> - gets replaced with <label-(monocle|tiled|fullscreen|floating|locked|sticky|private)>
+; Default: <label-state>
+format = <label-state>
+
+; Available tokens:
+;   %name%
+; Default: %name%
+label-monitor = %name%
+
+label-focused = %name%
+label-focused-background = ${colors.shade5} 
+label-focused-padding = 3 
+
+label-occupied = %name%
+label-occupied-foreground = ${colors.shade6}
+label-occupied-padding = 3
+
+label-urgent = %name%
+label-urgent-padding = 3
+
+label-empty = %name%
+label-empty-foreground = ${colors.shade4}
+label-empty-padding = 3
+
+[module/mpd]
+type = internal/mpd
+format-online = <label-song>  <icon-prev> <icon-stop> <toggle> <icon-next>
+
+icon-prev = 
+icon-stop = 
+icon-play = 
+icon-pause = 
+icon-next = 
+
+label-song-maxlen = 25
+label-song-ellipsis = true
+
+[module/cpu]
+type = internal/cpu
+interval = 2
+format-foreground = ${colors.shade2}
+format-background = ${colors.shade0}
+format-prefix = " "
+format-prefix-foreground = ${colors.foreground-alt}
+format-underline = #f90000
+label = %percentage:2%%
+
+[module/memory]
+type = internal/memory
+interval = 2
+format-foreground = ${colors.shade2}
+format-background = ${colors.shade0}
+format-prefix = " "
+format-prefix-foreground = ${colors.foreground-alt}
+format-underline = #4bffdc
+label = %percentage_used%%
+
+[module/date]
+type = internal/date
+interval = 5
+
+date =
+date-alt = " %Y-%m-%d"
+
+time = %H:%M
+time-alt = %H:%M:%S
+
+format-foreground = ${colors.shade2}
+format-background = ${colors.shade0}
+format-prefix = 
+format-prefix-foreground = ${colors.foreground-alt}
+format-underline = #0a6cf5
+
+label = %date% %time%
+
+[module/pulseaudio]
+type = internal/pulseaudio
+label-volume-background = ${colors.shade0}
+
+format-volume = <label-volume> <bar-volume>
+label-volume = VOL %percentage%%
+label-volume-foreground = ${colors.shade2}
+
+label-muted = 🔇 muted
+label-muted-foreground = #666
+
+bar-volume-width = 10
+bar-volume-foreground-0 = #55aa55
+bar-volume-foreground-1 = #55aa55
+bar-volume-foreground-2 = #55aa55
+bar-volume-foreground-3 = #55aa55
+bar-volume-foreground-4 = #55aa55
+bar-volume-foreground-5 = #f5a70a
+bar-volume-foreground-6 = #ff5555
+bar-volume-gradient = false
+bar-volume-indicator = |
+bar-volume-indicator-font = 2
+bar-volume-fill = ─
+bar-volume-fill-font = 2
+bar-volume-empty = ─
+bar-volume-empty-font = 2
+bar-volume-empty-foreground = ${colors.foreground-alt}
+
+[module/temperature]
+type = internal/temperature
+thermal-zone = 0
+warn-temperature = 60
+
+format = <ramp> <label>
+
+label = %temperature-c%
+label-warn = %temperature-c%
+label-warn-foreground = ${colors.shade1}
+label-foreground = ${colors.shade2}
+label-background = ${colors.shade0}
+
+ramp-0 = 
+ramp-1 = 
+ramp-2 = 
+ramp-foreground = ${colors.foreground-alt}
+
+[settings]
+screenchange-reload = true
+;compositing-background = xor
+;compositing-background = screen
+;compositing-foreground = source
+;compositing-border = over
+;pseudo-transparency = false
+
+[global/wm]
+margin-top = 5
+margin-bottom = 5
+
+; vim:ft=dosini
