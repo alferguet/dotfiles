@@ -19,6 +19,15 @@ nmap <C-n> :NERDTreeToggle<CR>
 vmap ++ <plug>NERDCommenterToggle
 nmap ++ <plug>NERDCommenterToggle
 
+if ! has('gui_running')
+    set ttimeoutlen=10
+    augroup FastEscape
+        autocmd!
+        au InsertEnter * set timeoutlen=0
+        au InsertLeave * set timeoutlen=1000
+    augroup END
+endif
+
 " open NERDTree automatically
 "autocmd StdinReadPre * let s:std_in=1
 "autocmd VimEnter * NERDTree
@@ -38,7 +47,7 @@ set cindent
 set tabstop=2
 set shiftwidth=2
 " always uses spaces instead of tab characters
-set expandtab
+" set expandtab
 
 " sync open file with NERDTree
 " " Check if NERDTree is open or active
