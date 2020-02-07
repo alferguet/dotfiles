@@ -8,9 +8,7 @@ bspc monitor HDMI-0 -d I II
 bspc monitor DVI-D-0 -d III IV
 bspc monitor DP-4 -d V VI 
 
-
-wal -i .config/bspwm/wallpaper.jpg --vte --saturate 0.6
-
+wal -i .config/bspwm/wallpaper.jpg --backend haishoku --vte --saturate 0.5
 # source the colors.
 . "${HOME}/.cache/wal/colors.sh"
 

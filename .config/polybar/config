@@ -78,7 +78,7 @@ cursor-scroll = ns-resize
 type = internal/xwindow
 label = %title:0:50: ...%
 label-padding = 2
-label-foreground = ${colors.shade1}
+label-foreground = ${colors.shade3}
 label-background = ${colors.shade0}
 
 [module/powermenu]
