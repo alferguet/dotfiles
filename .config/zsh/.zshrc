@@ -12,10 +12,17 @@ compinit
 # Include hidden files in autocomplete:
 _comp_options+=(globdots)
 
+# History in cache directory:
+HISTSIZE=10000
+SAVEHIST=10000
+HISTFILE=~/.cache/zsh/history
+setopt INC_APPEND_HISTORY_TIME
 # FZF
+source ~/.config/zsh/completion.zsh
+source ~/.config/zsh/key-bindings.zsh
 
 # Cargo
-source /home/sloth/.cargo/env
+source ~/.cargo/env
 
 # Use vim keys in tab complete menu:
 bindkey -M menuselect 'h' vi-backward-char

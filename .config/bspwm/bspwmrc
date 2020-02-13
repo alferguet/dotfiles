@@ -25,6 +25,8 @@ bspc config window_gap          12
 bspc config split_ratio          0.52
 bspc config borderless_monocle   true
 
+bspc rule -a zathura state=tiled
+
 $HOME/.config/polybar/launch.sh &
 $HOME/.config/dunst/dunst.sh &
 picom --config $HOME/.config/picom/config -b -c

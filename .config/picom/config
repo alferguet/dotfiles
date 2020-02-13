@@ -37,7 +37,6 @@ blur-background-exclude = [
 ];
 opacity-rule = [ 
   "60:class_g= 'Polybar'",
-	"95:class_g= 'Firefox'",
 	"90:class_g= 'Telegram'",
 ];
 
