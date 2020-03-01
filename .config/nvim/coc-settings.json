@@ -1,0 +1,6 @@
+{
+	"coc.preferences.formatOnSaveFiletypes": [
+		"rust",
+		"typescript"
+	]
+}

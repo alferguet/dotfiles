@@ -17,9 +17,12 @@ HISTSIZE=10000
 SAVEHIST=10000
 HISTFILE=~/.cache/zsh/history
 setopt INC_APPEND_HISTORY_TIME
+
 # FZF
 source ~/.config/zsh/completion.zsh
 source ~/.config/zsh/key-bindings.zsh
+export FZF_DEFAULT_COMMAND='fd --type f --hidden'
+export FZF_CTRL_T_COMMAND="${FZF_DEFAULT_COMMAND}"
 
 # Cargo
 source ~/.cargo/env
