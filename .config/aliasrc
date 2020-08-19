@@ -1,21 +1,20 @@
 #!/bin/sh 
 
+alias config='/usr/bin/git --git-dir=/home/sloth/.cfg/ --work-tree=/home/sloth'
+
 alias ls='ls --color=auto'
-alias xin='sudo xbps-install -S'
-alias xup='sudo xbps-install -Suv'
-alias xq='sudo xbps-query'
-alias xf='sudo xbps-query -Rs'
-alias xme='sudo xbps-query -m'
-alias xrm='sudo xbps-remove -R'
-alias xcp='sudo xbps-remove -Oo'
+alias esyn='doas emaint -a sync'
+alias ein='doas emerge --ask'
+alias eup='doas emerge -uDU --keep-going --with-bdeps=y --ask @world'
+alias equ='equery uses'
+alias erm='doas emerge --deselect'
+alias edc='doas emerge --depclean -v'
 
 alias mp3="youtube-dl -x --embed-thumbnail --audio-format mp3"
 
-alias config='/usr/bin/git --git-dir=/home/sloth/.cfg/ --work-tree=/home/sloth'
-
-alias zzz='sudo zzz'
-alias reboot='sudo reboot'
-alias poweroff='sudo poweroff'
+alias zzz='doas s2ram -f'
+alias reboot='doas reboot'
+alias sd='doas shutdown -P now'
 
 alias vi='nvim'
 alias tmux='tmux -f ${HOME}/.config/tmux/.tmux.conf'

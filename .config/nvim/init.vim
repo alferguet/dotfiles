@@ -2,15 +2,15 @@ call plug#begin('~/.local/share/nvim/plugged')
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'leafgarland/typescript-vim'
 Plug 'rust-lang/rust.vim'
-Plug 'tpope/vim-fugitive'
 Plug 'vim-airline/vim-airline'
 Plug 'scrooloose/nerdtree'
 Plug 'junegunn/fzf'
 Plug 'christoomey/vim-tmux-navigator'
-Plug 'dylanaraps/wal.vim'
+Plug 'arcticicestudio/nord-vim'
+Plug 'tpope/vim-surround'
 call plug#end()
 
-colorscheme wal
+colorscheme nord
 
 " air-line
 let g:airline_powerline_fonts = 1
