@@ -2,10 +2,14 @@
 
 sxhkd &
 
-bspc wm -O HDMI-0 DVI-D-0
+bspc wm -O HDMI1 HDMI2
 
-bspc monitor HDMI-0 -d I II III
-bspc monitor DVI-D-0 -d IV V VI
+bspc monitor HDMI1 -d I II III
+bspc monitor HDMI2 -d IV V VI
+
+$HOME/.screenlayout/dual.sh
+
+setxkbmap -layout us altgr-intl
 
 feh --bg-scale $HOME/.config/bspwm/wallpaper.jpg
 

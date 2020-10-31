@@ -17,5 +17,7 @@ export STATUSBAR="polybar"
 export ZDOTDIR="$HOME/.config/zsh"
 export GTK2_RC_FILES="$HOME/.config/gtk-2.0/gtkrc-2.0"
 
+/home/sloth/.screenlayout/dual.sh
+
 # Start graphical server on tty1 if not already running.
-# [ "$(tty)" = "/dev/tty1" ] && ! pgrep -x Xorg >/dev/null && exec startx
+[ "$(tty)" = "/dev/tty1" ] && ! pgrep -x Xorg >/dev/null && exec startx -- vt1

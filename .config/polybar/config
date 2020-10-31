@@ -37,7 +37,7 @@ outer = 2
 ;---------------------------------------
 
 [bar/top]
-monitor = HDMI-0
+monitor = HDMI1
 fixed-center = true
 width = 100%
 height = 28 
@@ -166,7 +166,7 @@ label-padding-right = ${paddings.inner}
 
 [module/eth]
 type = internal/network
-interface = enp4s0
+interface = enp3s0
 interval = 1
 
 format-connected-background = ${colors.nord2}

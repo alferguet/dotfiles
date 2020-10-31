@@ -21,6 +21,8 @@ text/javascript=nvim.desktop
 image/gif=sxiv.desktop
 image/svg=sxiv.desktop
 text/json=nvim.desktop
+x-scheme-handler/jagex-jav=runescape.desktop
+x-scheme-handler/discord-409416265891971072=discord-409416265891971072.desktop
 
 [Added Associations]
 x-scheme-handler/http=userapp-Firefox-D09BF0.desktop;firefox.desktop;
