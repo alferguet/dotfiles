@@ -5,18 +5,19 @@ export PATH=$PATH:/home/sloth/.local/bin
 alias config='/usr/bin/git --git-dir=/home/sloth/.cfg/ --work-tree=/home/sloth'
 
 alias ls='ls --color=auto'
-alias esyn='doas emaint -a sync'
-alias ein='doas emerge --ask'
-alias eup='doas emerge -uDU --keep-going --with-bdeps=y --ask @world'
-alias equ='equery uses'
-alias erm='doas emerge --deselect'
-alias edc='doas emerge --depclean -v'
+alias xin='doas xbps-install -S'
+alias xup='doas xbps-install -Suv'
+alias xq='doas xbps-query'
+alias xf='doas xbps-query -Rs'
+alias xme='doas xbps-query -m'
+alias xrm='doas xbps-remove -R'
+alias xcp='doas xbps-remove -Oo'
 
 alias mp3="youtube-dl -x --embed-thumbnail --audio-format mp3"
 
-alias zzz='doas s2ram -f'
+alias zzz='doas zzz'
 alias reboot='doas reboot'
-alias sd='doas shutdown -P now'
+alias poweroff='doas poweroff'
 
 alias vi='nvim'
 alias tmux='tmux -f ${HOME}/.config/tmux/.tmux.conf'

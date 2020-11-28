@@ -11,7 +11,7 @@ $HOME/.screenlayout/dual.sh
 
 setxkbmap -layout us altgr-intl
 
-feh --bg-scale $HOME/.config/bspwm/wallpaper.jpg
+xwallpaper --stretch $HOME/.config/bspwm/wallpaper.jpg
 
 # Set the border colors.
 bspc config normal_border_color "#2e3440"
