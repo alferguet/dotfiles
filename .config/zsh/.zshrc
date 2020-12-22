@@ -16,7 +16,8 @@ _comp_options+=(globdots)
 HISTSIZE=10000
 SAVEHIST=10000
 HISTFILE=~/.cache/zsh/history
-setopt INC_APPEND_HISTORY_TIME
+setopt SHARE_HISTORY
+
 
 # FZF
 source ~/.config/zsh/completion.zsh

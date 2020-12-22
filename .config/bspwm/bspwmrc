@@ -28,6 +28,6 @@ bspc config borderless_monocle   true
 bspc rule -a Zathura state=tiled
 
 $HOME/.config/polybar/launch.sh &
-picom -bc &
+picom -bc --config $HOME/.config/picom/config &
 
 pgrep bspswallow || bspswallow &
