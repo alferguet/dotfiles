@@ -1,0 +1,9 @@
+configuration {
+	modi: "window,run,ssh,combi";
+	show-icons: true;
+  location: 2;
+	yoffset: 5;					
+	font: "JetBrains Mono 10";
+	theme: "nord";
+	matching: "fuzzy";
+}

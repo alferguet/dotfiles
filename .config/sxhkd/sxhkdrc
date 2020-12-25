@@ -8,7 +8,7 @@ super + Return
 
 # program launcher
 super + @space
-	dmenu_run
+  rofi -show combi -combi-modi run,ssh	
 
 # make sxhkd reload its configuration files:
 super + Escape
@@ -29,6 +29,20 @@ super + {_,shift + }w
 # alternate between the tiled and monocle layout
 super + m
 	bspc desktop -l next
+
+# move current window to a pre-selected space
+# super + shift + m
+# 	bspc node -n last.!automatic	
+
+# Rotate tree
+super + shift + {d,a}
+    bspc node @/ -C {forward,backward}
+
+# Expand/contract a window by moving one of its side outward/inward
+super + s : {h,j,k,l}
+    STEP=20; SELECTION={1,2,3,4}; \
+    bspc node -z $(echo "left -$STEP 0,bottom 0 $STEP,top 0 -$STEP,right $STEP 0" | cut -d',' -f$SELECTION) || \
+    bspc node -z $(echo "right -$STEP 0,top 0 $STEP,bottom 0 -$STEP,left $STEP 0" | cut -d',' -f$SELECTION)
 
 # send the newest marked node to the newest preselected node
 super + y
