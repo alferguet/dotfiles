@@ -1,5 +1,5 @@
 [Default Applications]
-application/pdf=zathura.desktop
+application/pdf=org.pwmt.zathura.desktop
 x-scheme-handler/http=userapp-Firefox-WDYOV0.desktop
 x-scheme-handler/https=userapp-Firefox-WDYOV0.desktop
 x-scheme-handler/ftp=userapp-Firefox-WDYOV0.desktop
@@ -23,6 +23,7 @@ image/svg=sxiv.desktop
 text/json=nvim.desktop
 x-scheme-handler/jagex-jav=runescape.desktop
 x-scheme-handler/discord-409416265891971072=discord-409416265891971072.desktop
+x-scheme-handler/tg=userapp-Telegram Desktop-9RO0V0.desktop
 
 [Added Associations]
 x-scheme-handler/http=userapp-Firefox-D09BF0.desktop;firefox.desktop;userapp-Firefox-S8DYT0.desktop;userapp-Firefox-WDYOV0.desktop;
@@ -37,3 +38,6 @@ application/xhtml+xml=userapp-Firefox-D09BF0.desktop;firefox.desktop;userapp-Fir
 application/x-extension-xhtml=userapp-Firefox-D09BF0.desktop;firefox.desktop;userapp-Firefox-S8DYT0.desktop;userapp-Firefox-WDYOV0.desktop;
 application/x-extension-xht=userapp-Firefox-D09BF0.desktop;firefox.desktop;userapp-Firefox-S8DYT0.desktop;userapp-Firefox-WDYOV0.desktop;
 x-scheme-handler/magnet=rtorrent.desktop;
+x-scheme-handler/tg=userapp-Telegram Desktop-9RO0V0.desktop;
+application/pdf=org.pwmt.zathura-pdf-mupdf.desktop;
+image/png=sxiv.desktop;

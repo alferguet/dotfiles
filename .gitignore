@@ -14,6 +14,11 @@
 .config/pavucontrol.ini
 .config/pulse/
 .config/unity3d/
+.config/Mumble/
+.config/nicotine/
+.wget-hsts
+.config/zsh/.zcompdump
+.audacity-data
 .dbus/
 .docker/
 .gitconfig
@@ -35,3 +40,9 @@
 .var/
 storage
 .config/zsh/.zcompdump
+.FreeCAD/
+.config/FreeCAD/
+.config/StardewValley/
+.config/cef_user_data/
+.config/cmus/
+.config/mpv/
