@@ -22,6 +22,8 @@ alias poweroff='doas poweroff'
 alias vi='nvim'
 alias tmux='tmux -f ${HOME}/.config/tmux/.tmux.conf'
 
+alias rt='rtorrent -d /mnt/storage/downloads'
+
 
 # Functions
 
