@@ -41,3 +41,5 @@ x-scheme-handler/magnet=rtorrent.desktop;
 x-scheme-handler/tg=userapp-Telegram Desktop-9RO0V0.desktop;
 application/pdf=org.pwmt.zathura-pdf-mupdf.desktop;
 image/png=sxiv.desktop;
+image/vnd.dxf=org.inkscape.Inkscape.desktop;
+image/vnd.dwg=org.inkscape.Inkscape.desktop;

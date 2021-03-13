@@ -18,6 +18,8 @@ super + Escape
 super + p
 	scrot
 
+super + t
+	setxkbmap -layout us altgr-intl
 # drag print screen
 super + shift + p
 	scrot -s
@@ -45,12 +47,6 @@ super + m
 # Rotate tree
 super + shift + {d,a}
     bspc node @/ -C {forward,backward}
-
-# Expand/contract a window by moving one of its side outward/inward
-super + s : {h,j,k,l}
-    STEP=20; SELECTION={1,2,3,4}; \
-    bspc node -z $(echo "left -$STEP 0,bottom 0 $STEP,top 0 -$STEP,right $STEP 0" | cut -d',' -f$SELECTION) || \
-    bspc node -z $(echo "right -$STEP 0,top 0 $STEP,bottom 0 -$STEP,left $STEP 0" | cut -d',' -f$SELECTION)
 
 # send the newest marked node to the newest preselected node
 super + y
