@@ -46,3 +46,9 @@ storage
 .config/cef_user_data/
 .config/cmus/
 .config/mpv/
+.config/inkscape/
+.config/nextjs-nodejs/
+.config/nnn/.lastd
+.config/obs-studio/
+.node_repl_history
+.vuerc

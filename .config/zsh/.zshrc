@@ -4,6 +4,11 @@ PS1="%B%{$fg[blue]%}[%{$fg[green]%}%n%{$fg[magenta]%}@%{$fg[blue]%}%M %{$fg[mage
 
 [ -f "$HOME/.config/aliasrc" ] && source "$HOME/.config/aliasrc"
 
+export PATH=$PATH:/home/sloth/.local/bin
+
+export VISUAL=ewrap
+export EDITOR=nvim
+
 autoload -U compinit
 zstyle ':completion:*' menu select
 zmodload zsh/complist
@@ -22,13 +27,15 @@ setopt SHARE_HISTORY
 # FZF
 source ~/.config/zsh/completion.zsh
 source ~/.config/zsh/key-bindings.zsh
-export FZF_DEFAULT_COMMAND='fd --type f --hidden'
-export FZF_CTRL_T_COMMAND="${FZF_DEFAULT_COMMAND}"
+export FZF_DEFAULT_COMMAND='fd --type f -L'
 export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
     --color=fg:#e5e9f0,bg:#3b4252,hl:#81a1c1
     --color=fg+:#e5e9f0,bg+:#3b4252,hl+:#81a1c1
     --color=info:#eacb8a,prompt:#bf6069,pointer:#b48dac
     --color=marker:#a3be8b,spinner:#b48dac,header:#a3be8b'
+export FZF_CTRL_T_COMMAND="${FZF_DEFAULT_COMMAND}"
+export FZF_ALT_C_COMMAND='fd -L --type d --type symlink'
+export FZF_ALT_C_OPTS="--preview 'tree -C {} | head -200'"
 
 # Cargo
 source ~/.cargo/env

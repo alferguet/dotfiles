@@ -2,6 +2,7 @@
 	"coc.preferences.formatOnSaveFiletypes": [
 		"rust",
 		"typescript",
+		"typescriptreact",
 		"html"
 	],
 	"eslint.autoFixOnSave": true

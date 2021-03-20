@@ -18,7 +18,7 @@ super + Escape
 super + p
 	scrot
 
-super + t
+super + shift + t
 	setxkbmap -layout us altgr-intl
 # drag print screen
 super + shift + p

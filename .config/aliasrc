@@ -1,16 +1,6 @@
 #!/bin/sh 
 
-export PATH=$PATH:/home/sloth/.local/bin
-
-export VISUAL=ewrap
-export EDITOR=nvim
-
-export FZF_DEFAULT_COMMAND='fd --type f'
-export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-export FZF_ALT_C_COMMAND='fd -L --type d --type symlink'
-export FZF_ALT_C_OPTS="--preview 'tree -C {} | head -200'"
-
-alias config='/usr/bin/git --git-dir=/home/sloth/.cfg/ --work-tree=/home/sloth'
+alias dotfiles='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
 alias ls='ls --color=auto'
 alias xin='doas xbps-install -S'
