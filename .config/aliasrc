@@ -21,6 +21,10 @@ alias vi='nvim'
 alias tmux='tmux -f ${HOME}/.config/tmux/.tmux.conf'
 alias nnn='nnn -e'
 
+alias gl='git log --oneline --decorate --graph --all'
+
+alias doco='docker-compose'
+
 alias rt='rtorrent -d /mnt/storage/downloads'
 
 
