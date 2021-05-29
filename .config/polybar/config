@@ -60,9 +60,9 @@ font-3 = FontAwesome5Brands:size=8;2
 
 ;---------------------------------------
 
-modules-left = bspwm
-modules-center =
-modules-right = pulseaudio memory cpu temperature eth time date power
+modules-left = time date 
+modules-center = bspwm
+modules-right = eth memory cpu temperature pulseaudio power
 
 ;---------------------------------------
 

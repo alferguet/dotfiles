@@ -1,7 +1,8 @@
 call plug#begin('~/.local/share/nvim/plugged')
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-" Plug 'leafgarland/typescript-vim'
+Plug 'herringtondarkholme/yats.vim'
 Plug 'peitalin/vim-jsx-typescript'
+Plug 'leafOfTree/vim-vue-plugin'
 Plug 'rust-lang/rust.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'scrooloose/nerdtree'
@@ -18,13 +19,31 @@ colorscheme nord
 
 let mapleader=","
 
+" common shortcuts
+noremap <leader>s :update<CR>
+
+" vue
+
+let g:vim_vue_plugin_config = { 
+      \'syntax': {
+      \   'template': ['html'],
+      \   'script': ['javascript'],
+      \   'style': ['css', 'scss'],
+      \},
+      \'full_syntax': [],
+      \'attribute': 0,
+      \'keyword': 1,
+      \'foldexpr': 0,
+      \'init_indent': 0,
+      \'debug': 0,
+      \}
+
 " fzf
 xmap <leader>f  :Files<CR>
 nmap <leader>f  :Files<CR>
 
 " air-line
 let g:airline_powerline_fonts = 1
-
 
 inoremap jk <ESC>
 
@@ -68,6 +87,9 @@ set shortmess+=c
 
 " always show signcolumns
 set signcolumn=yes
+
+" for adding @ as keyword for scss
+autocmd FileType scss setl iskeyword+=@-@
 
 " Use tab for trigger completion with characters ahead and navigate.
 " Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.

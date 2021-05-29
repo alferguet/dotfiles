@@ -24,6 +24,7 @@ text/json=nvim.desktop
 x-scheme-handler/jagex-jav=runescape.desktop
 x-scheme-handler/discord-409416265891971072=discord-409416265891971072.desktop
 x-scheme-handler/tg=userapp-Telegram Desktop-9RO0V0.desktop
+x-scheme-handler/discord-443564201349218305=discord-443564201349218305.desktop
 
 [Added Associations]
 x-scheme-handler/http=userapp-Firefox-D09BF0.desktop;firefox.desktop;userapp-Firefox-S8DYT0.desktop;userapp-Firefox-WDYOV0.desktop;

@@ -3,7 +3,8 @@
 		"rust",
 		"typescript",
 		"typescriptreact",
-		"html"
+		"html",
+		"scss"
 	],
 	"eslint.autoFixOnSave": true
 }

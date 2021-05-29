@@ -1,5 +1,4 @@
 autoload -U colors && colors
-
 PS1="%B%{$fg[blue]%}[%{$fg[green]%}%n%{$fg[magenta]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[blue]%}]%{$reset_color%}$%b "
 
 [ -f "$HOME/.config/aliasrc" ] && source "$HOME/.config/aliasrc"
@@ -9,8 +8,12 @@ export PATH=$PATH:/home/sloth/.local/bin
 export VISUAL=ewrap
 export EDITOR=nvim
 
-autoload -U compinit
+export _JAVA_AWT_WM_NONREPARENTING=1
+
+fpath=(~/.config/zsh $fpath)
+autoload -Uz compinit
 zstyle ':completion:*' menu select
+zstyle ':completion:*:*:git:*' script ~/.config/zsh/git-completion.bash
 zmodload zsh/complist
 compinit
 
@@ -74,3 +77,6 @@ zle -N zle-line-init
 echo -ne '\e[5 q'
 # Use beam shape cursor for each new prompt.
 preexec() { echo -ne '\e[5 q' ;}
+
+# syntax highlighting
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
