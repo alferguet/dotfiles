@@ -1,0 +1,4 @@
+#!/bin/sh
+
+env PULSE_SERVER=unix:/run/user/$(id -u)/pulse/native
+flatpak run --socket=pulseaudio com.discordapp.Discord
