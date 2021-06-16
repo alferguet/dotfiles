@@ -2,12 +2,12 @@
 
 sxhkd &
 
-bspc wm -O HDMI1 HDMI2
+# bspc wm -O HDMI1 HDMI2
 
-bspc monitor HDMI1 -d I II III
-bspc monitor HDMI2 -d IV V VI
+bspc monitor HDMI1 -d I II III IV V VI
+# bspc monitor HDMI2 -d IV V VI
 
-$HOME/.screenlayout/dual.sh
+# $HOME/.screenlayout/dual.sh
 
 setxkbmap -layout us altgr-intl
 
@@ -26,7 +26,6 @@ bspc config split_ratio          0.52
 bspc config borderless_monocle   false
 
 bspc rule -a Zathura state=tiled
-bspc rule -a net-runelite-launcher-Launcher state=pseudo_tiled private=on
 
 $HOME/.config/polybar/launch.sh &
 picom -bc --config $HOME/.config/picom/config &
