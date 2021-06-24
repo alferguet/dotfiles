@@ -3,24 +3,17 @@
 ;---------------------------------------
 
 [colors]
-nord0 = #2E3440
-nord1 = #3B4252
-nord2 = #434C5E
-nord3 = #4C566A
-nord4 = #D8DEE9
-nord5 = #E5E9F0
-nord6 = #ECEFF4
-nord7 = #8FBCBB
-nord8 = #88C0D0
-nord9 = #81A1C1
-nord10 = #5E81AC
-nord11 = #BF616A
-nord12 = #D08770
-nord13 = #EBCB8B
-nord14 = #A3BE8C
-nord15 = #B48EAD
-nord16 = #546076
-nord17 = #5C6A82
+dimblue = #4D5B86
+foreground = #F8F8F2
+blue = #BD93F9
+cyan = #8BE9FD
+background = #282A36
+white = #BFBFBF
+red = #FF5555
+orange = #FFB86C
+yellow = #F1FA8C
+green = #50FA7B
+magenta = #FF79C6
 
 transparent = #00000000
 
@@ -44,10 +37,10 @@ height = 28
 
 tray-position = right
 tray-maxsize = 20
-tray-background = ${colors.nord10}
+tray-background = ${colors.background}
 
-background = ${colors.nord0}
-foreground = ${colors.nord6}
+background = ${colors.background}
+foreground = ${colors.foreground}
 
 wm-restack = bspwm
 
@@ -56,7 +49,7 @@ wm-restack = bspwm
 font-0 = JetBrains Mono:size=8;2
 font-1 = FontAwesome5FreeSolid:size=8;2
 font-2 = FontAwesome5FreeRegular:size=8;2
-font-3 = FontAwesome5Brands:size=8;2
+font-3 = FontAFF5555:size=8;2
 
 ;---------------------------------------
 
@@ -80,16 +73,16 @@ pin-workspaces = false
 
 format = <label-state>
 
-label-focused-foreground = ${colors.nord8}
+label-focused-foreground = ${colors.magenta}
 label-focused-padding = ${paddings.inner}
 
-label-occupied-foreground = ${colors.nord15}
+label-occupied-foreground = ${colors.blue}
 label-occupied-padding = ${paddings.inner}
 
-label-urgent-foreground = ${colors.nord13}
+label-urgent-foreground = ${colors.yellow}
 label-urgent-padding = ${paddings.inner}
 
-label-empty-foreground = ${colors.nord3}
+label-empty-foreground = ${colors.dimblue}
 label-empty-padding = ${paddings.inner}
 
 ;---------------------------------------
@@ -102,31 +95,31 @@ type = custom/menu
 format = <label-toggle><menu>
 
 label-open = 
-label-open-background = ${colors.nord10}
+label-open-background = ${colors.background}
 label-open-padding = ${paddings.outer}
 
 label-close = 
-label-close-background = ${colors.nord10}
+label-close-background = ${colors.background}
 label-close-padding = ${paddings.outer}
 
 menu-0-0 =  exit
 menu-0-0-exec = bspc quit
-menu-0-0-background = ${colors.nord10}
+menu-0-0-background = ${colors.background}
 menu-0-0-padding = ${paddings.inner}
 
 menu-0-1 =  suspend
 menu-0-1-exec = doas zzz 
-menu-0-1-background = ${colors.nord10}
+menu-0-1-background = ${colors.background}
 menu-0-1-padding = ${paddings.inner}
 
 menu-0-2 =  reboot
 menu-0-2-exec = doas reboot
-menu-0-2-background = ${colors.nord10}
+menu-0-2-background = ${colors.background}
 menu-0-2-padding = ${paddings.inner}
 
 menu-0-3 =  poweroff
 menu-0-3-exec = doas poweroff
-menu-0-3-background = ${colors.nord10}
+menu-0-3-background = ${colors.background}
 menu-0-3-padding-left = ${paddings.inner}
 menu-0-3-padding-right = ${paddings.outer}
 
@@ -140,7 +133,7 @@ type = internal/date
 interval = 1
 date = "%d/%m/%Y"
 
-format-background = ${colors.nord1}
+format-background = ${colors.background}
 label = %date%
 label-padding-left = ${paddings.inner}
 label-padding-right = ${paddings.outer}
@@ -155,7 +148,7 @@ type = internal/date
 interval = 1
 time = %H:%M:%S
 
-format-background = ${colors.nord1}
+format-background = ${colors.background}
 label = %time%
 label-padding-left = ${paddings.outer}
 label-padding-right = ${paddings.inner}
@@ -169,7 +162,7 @@ type = internal/network
 interface = enp3s0
 interval = 1
 
-format-connected-background = ${colors.nord2}
+format-connected-background = ${colors.background}
 format-connected-padding = ${paddings.outer}
 label-connected = %{A1:networkmanager_dmenu:}%{A}  %downspeed:8%   %upspeed:8%
 
@@ -184,15 +177,15 @@ hwmon-path = /sys/devices/platform/coretemp.0/hwmon/hwmon2/temp1_input
 warn-temperature = 70
 
 format = <label>
-format-background = ${colors.nord3}
+format-background = ${colors.background}
 label = %temperature-c:2%
 label-padding-left = ${paddings.inner}
 label-padding-right = ${paddings.outer}
 
 format-warn = <label-warn>
-format-warn-background = ${colors.nord3}
+format-warn-background = ${colors.background}
 label-warn = %temperature-c:2%
-label-warn-foreground = ${colors.nord12}
+label-warn-foreground = ${colors.orange}
 label-warn-padding-left = ${paddings.inner}
 label-warn-padding-right = ${paddings.outer}
 
@@ -205,7 +198,7 @@ type = internal/cpu
 interval = 0.5
 
 format = <label>
-format-background = ${colors.nord3}
+format-background = ${colors.background}
 format-padding = ${paddings.inner}
 label =  %percentage:2%%
 
@@ -218,7 +211,7 @@ type = internal/memory
 interval = 0.5
 
 format = <label>
-format-background = ${colors.nord3}
+format-background = ${colors.background}
 label =  %percentage_used:2%%
 label-padding-left = ${paddings.outer}
 label-padding-right = ${paddings.inner}
@@ -234,12 +227,12 @@ sink = alsa_output.pci-0000_00_1f.3.analog-stereo
 use-ui-max = true
 
 label-muted = 
-label-muted-background = ${colors.nord16}
+label-muted-background = ${colors.background}
 label-muted-padding-left = ${paddings.outer}
 label-muted-padding-right = ${paddings.inner}
 
 format-volume = <ramp-volume> <label-volume>
-format-volume-background = ${colors.nord16}
+format-volume-background = ${colors.background}
 ramp-volume-0 = 
 ramp-volume-1 = 
 ramp-volume-2 = 

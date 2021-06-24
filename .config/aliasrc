@@ -19,7 +19,7 @@ alias poweroff='doas poweroff'
 
 alias vi='nvim'
 alias tmux='tmux -f ${HOME}/.config/tmux/.tmux.conf'
-alias nnn='nnn -e'
+alias nnn='nnn -e -C'
 
 alias gl='git log --oneline --decorate --graph --all'
 

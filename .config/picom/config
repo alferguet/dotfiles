@@ -36,7 +36,6 @@ blur-background-exclude = [
 	"_GTK_FRAME_EXTENTS@:c"
 ];
 opacity-rule = [ 
-  "90:class_g= 'Polybar'",
   "95:class_g= 'Alacritty'",
 ];
 

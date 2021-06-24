@@ -8,13 +8,17 @@ Plug 'vim-airline/vim-airline'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'arcticicestudio/nord-vim'
+Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 call plug#end()
 
-colorscheme nord
+colorscheme dracula
+let g:dracula_colorterm = 0
+let g:dracula_italic = 0
+set termguicolors
 
 let mapleader=","
 
@@ -45,14 +49,6 @@ nmap <leader>f  :Files<CR>
 let g:airline_powerline_fonts = 1
 
 inoremap jk <ESC>
-
-" NERDTree
-map <C-n> :NERDTreeToggle<CR>
-" Close if only NERDTree remains
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-"" Start if no files specified"
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 if ! has('gui_running')
     set ttimeoutlen=10
