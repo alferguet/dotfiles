@@ -15,6 +15,7 @@ export STATUSBAR="polybar"
 
 export ZDOTDIR="$HOME/.config/zsh"
 export GTK2_RC_FILES="$HOME/.config/gtk-2.0/gtkrc-2.0"
+export QT_QPA_PLATFORMTHEME="qt5ct"
 
 /home/sloth/.screenlayout/dual.sh
 
