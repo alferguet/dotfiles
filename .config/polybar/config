@@ -30,10 +30,10 @@ outer = 2
 ;---------------------------------------
 
 [bar/top]
-monitor = HDMI1
+monitor = HDMI-A-0
 fixed-center = true
 width = 100%
-height = 28 
+height = 28
 
 tray-position = right
 tray-maxsize = 20
@@ -53,9 +53,9 @@ font-3 = FontAFF5555:size=8;2
 
 ;---------------------------------------
 
-modules-left = time date 
+modules-left = time date
 modules-center = bspwm
-modules-right = eth memory cpu temperature pulseaudio power
+modules-right = eth memory cpu temperature pulseaudio-devices power
 
 ;---------------------------------------
 
@@ -108,7 +108,7 @@ menu-0-0-background = ${colors.background}
 menu-0-0-padding = ${paddings.inner}
 
 menu-0-1 =  suspend
-menu-0-1-exec = doas zzz 
+menu-0-1-exec = doas zzz
 menu-0-1-background = ${colors.background}
 menu-0-1-padding = ${paddings.inner}
 
@@ -217,8 +217,19 @@ label-padding-left = ${paddings.outer}
 label-padding-right = ${paddings.inner}
 
 ;---------------------------------------
-;	PULSEAUDIO MODULE
+;	PIPEWIRE MODULE
 ;---------------------------------------
+
+[module/pulseaudio-devices]
+type = custom/script
+label = "%output%"
+label-font = 2
+interval = 2.0
+exec = ~/.config/polybar/sound.sh
+click-right = exec pavucontrol &
+click-left = ~/.config/polybar/sound.sh mute &
+scroll-up = ~/.config/polybar/sound.sh up &
+scroll-down = ~/.config/polybar/sound.sh down &
 
 [module/pulseaudio]
 type = internal/pulseaudio

@@ -7,6 +7,7 @@ export PATH=$PATH:/home/sloth/.local/bin
 
 export VISUAL=ewrap
 export EDITOR=nvim
+export PF_SOURCE=~/.config/pfetch/alias.sh
 
 export _JAVA_AWT_WM_NONREPARENTING=1
 

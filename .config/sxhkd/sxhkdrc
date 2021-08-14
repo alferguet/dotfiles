@@ -20,8 +20,10 @@ super + Escape
 super + p
 	scrot
 
+# Reload logical keymap layout
 super + shift + t
 	setxkbmap -layout us altgr-intl
+
 # Drag to print screen
 super + shift + p
 	scrot -s
@@ -62,7 +64,7 @@ super + y
 
 # Swap the current node and the biggest node
 super + g
-	bspc node -s biggest
+	bspc node -s biggest.local
 
 #
 # state/flags
