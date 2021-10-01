@@ -2,24 +2,24 @@
 
 sxhkd &
 pipewire &
-pulseeffects --gapplication-service &
+easyeffects --gapplication-service &
 $HOME/.screenlayout/dual.sh
 
 bspc wm -O HDMI-A-0 DVI-D-0
 
-bspc monitor HDMI-A-0 -d I II III # IV V VI
-bspc monitor DVI-D-0 -d IV V VI
+bspc monitor HDMI-A-0 -d I II III IV
+bspc monitor DVI-D-0 -d V VI VII VIII
 
 
 setxkbmap -layout us altgr-intl
 
-xwallpaper --stretch $HOME/.config/bspwm/voiddracula.png
+xwallpaper --stretch $HOME/.config/bspwm/wallpaper.jpg
 
 # Set the border colors.
-bspc config normal_border_color "#44475a"
-bspc config active_border_color "#bd93f9"
-bspc config focused_border_color "#ff79c6"
-bspc config presel_feedback_color "#6272a4"
+bspc config normal_border_color "#4c566a"
+bspc config active_border_color "#b48ead"
+bspc config focused_border_color "#a3be8c"
+bspc config presel_feedback_color "#88c0d0"
 
 bspc config border_width         3
 bspc config window_gap          12
@@ -28,7 +28,7 @@ bspc config split_ratio          0.52
 bspc config borderless_monocle   false
 
 bspc rule -a Zathura state=tiled
-bspc rule -a steam follow=no
 
 $HOME/.config/polybar/launch.sh &
 picom --experimental-backends -bc --config $HOME/.config/picom/config &
+dunst &

@@ -3,18 +3,17 @@
 ;---------------------------------------
 
 [colors]
-dimblue = #4D5B86
-foreground = #F8F8F2
-blue = #BD93F9
-cyan = #8BE9FD
-background = #282A36
-white = #BFBFBF
-red = #FF5555
-orange = #FFB86C
-yellow = #F1FA8C
-green = #50FA7B
-magenta = #FF79C6
-
+dimblue = #68809a
+foreground = #d8dee9
+background = #2e3440
+red = #bf616a
+green = #a3be8c
+yellow = #ebcb8b
+orange = #d08770
+blue = #81a1c1
+magenta = #b48ead
+cyan = #88c0d0
+white = #e5e9f0
 transparent = #00000000
 
 ;---------------------------------------
@@ -53,8 +52,8 @@ font-3 = FontAFF5555:size=8;2
 
 ;---------------------------------------
 
-modules-left = time date
-modules-center = bspwm
+modules-left = time date cmus
+modules-center = bspwm 
 modules-right = eth memory cpu temperature pulseaudio-devices power
 
 ;---------------------------------------
@@ -159,12 +158,12 @@ label-padding-right = ${paddings.inner}
 
 [module/eth]
 type = internal/network
-interface = enp3s0
+interface = enp4s0
 interval = 1
 
 format-connected-background = ${colors.background}
 format-connected-padding = ${paddings.outer}
-label-connected = %{A1:networkmanager_dmenu:}%{A}  %downspeed:8%   %upspeed:8%
+label-connected = %{A1:networkmanager_dmenu:}%{A}%downspeed:8% %upspeed:8%
 
 ;---------------------------------------
 ;	TEMPERATURE MODULE
@@ -173,18 +172,18 @@ label-connected = %{A1:networkmanager_dmenu:}%{A}  %downspeed:8%   %upspee
 [module/temperature]
 type = internal/temperature
 interval = 0.5
-hwmon-path = /sys/devices/platform/coretemp.0/hwmon/hwmon2/temp1_input
+hwmon-path = /sys/devices/platform/coretemp.0/hwmon/hwmon3/temp1_input
 warn-temperature = 70
 
 format = <label>
 format-background = ${colors.background}
-label = %temperature-c:2%
+label =  %temperature-c:2%
 label-padding-left = ${paddings.inner}
 label-padding-right = ${paddings.outer}
 
 format-warn = <label-warn>
 format-warn-background = ${colors.background}
-label-warn = %temperature-c:2%
+label-warn =  %temperature-c:2%
 label-warn-foreground = ${colors.orange}
 label-warn-padding-left = ${paddings.inner}
 label-warn-padding-right = ${paddings.outer}
@@ -200,7 +199,7 @@ interval = 0.5
 format = <label>
 format-background = ${colors.background}
 format-padding = ${paddings.inner}
-label =  %percentage:2%%
+label = %percentage:2%%
 
 ;---------------------------------------
 ;	RAM MODULE
@@ -217,6 +216,19 @@ label-padding-left = ${paddings.outer}
 label-padding-right = ${paddings.inner}
 
 ;---------------------------------------
+;	CMUS MODULE
+;---------------------------------------
+
+[module/cmus]
+type = custom/script
+exec = ~/.config/polybar/plugins/cmus.sh
+interval = 5
+click-left = cmus-remote -n &
+click-right = cmus-remote -r &
+click-middle = cmus-remote -u &
+format-foreground = ${colors.blue}
+
+;---------------------------------------
 ;	PIPEWIRE MODULE
 ;---------------------------------------
 
@@ -225,11 +237,11 @@ type = custom/script
 label = "%output%"
 label-font = 2
 interval = 2.0
-exec = ~/.config/polybar/sound.sh
+exec = ~/.config/polybar/plugins/sound.sh
 click-right = exec pavucontrol &
-click-left = ~/.config/polybar/sound.sh mute &
-scroll-up = ~/.config/polybar/sound.sh up &
-scroll-down = ~/.config/polybar/sound.sh down &
+click-left = ~/.config/polybar/plugins/sound.sh mute &
+scroll-up = ~/.config/polybar/plugins/sound.sh up &
+scroll-down = ~/.config/polybar/plugins/sound.sh down &
 
 [module/pulseaudio]
 type = internal/pulseaudio

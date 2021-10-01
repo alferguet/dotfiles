@@ -8,16 +8,13 @@ Plug 'vim-airline/vim-airline'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'arcticicestudio/nord-vim'
-Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 call plug#end()
 
-colorscheme dracula
-let g:dracula_colorterm = 0
-let g:dracula_italic = 0
+colorscheme nord
 set termguicolors
 
 let mapleader=","
