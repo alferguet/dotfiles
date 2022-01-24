@@ -27,6 +27,7 @@ x-scheme-handler/tg=userapp-Telegram Desktop-9RO0V0.desktop
 x-scheme-handler/discord-443564201349218305=discord-443564201349218305.desktop
 application/vnd.powdertoy.save=powdertoy-tpt-open.desktop
 x-scheme-handler/ptsave=powdertoy-tpt-ptsave.desktop
+x-scheme-handler/discord-712465656758665259=discord-712465656758665259.desktop
 
 [Added Associations]
 x-scheme-handler/http=userapp-Firefox-D09BF0.desktop;firefox.desktop;userapp-Firefox-S8DYT0.desktop;userapp-Firefox-WDYOV0.desktop;

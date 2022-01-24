@@ -7,4 +7,4 @@
 [ -f ~/.xprofile ] && . ~/.xprofile
 [ -f ~/.Xresources ] && xrdb -merge -I$HOME ~/.Xresources
 sxhkd &
-exec bspwm
+exec bspwm 

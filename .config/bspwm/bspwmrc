@@ -4,12 +4,12 @@ sxhkd &
 pipewire &
 easyeffects --gapplication-service &
 $HOME/.screenlayout/dual.sh
-
-bspc wm -O HDMI-A-0 DVI-D-0
+/usr/libexec/polkit-gnome-authentication-agent-1 &
 
 bspc monitor HDMI-A-0 -d I II III IV
 bspc monitor DVI-D-0 -d V VI VII VIII
 
+bspc wm -O HDMI-A-0 DVI-D-0
 
 setxkbmap -layout us altgr-intl
 
@@ -28,6 +28,8 @@ bspc config split_ratio          0.52
 bspc config borderless_monocle   false
 
 bspc rule -a Zathura state=tiled
+bspc rule -a Firefox desktop='^1'
+bspc rule -a Steam desktop='^4'
 
 $HOME/.config/polybar/launch.sh &
 picom --experimental-backends -bc --config $HOME/.config/picom/config &

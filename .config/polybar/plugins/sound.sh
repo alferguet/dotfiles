@@ -1,26 +1,22 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 function main() {
-    # Pipewire
-    SOURCE=$(pw-record --list-targets | sed -n 's/^*.*"\(.*\)" prio=.*$/\1/p')
-    SINK=$(pw-play --list-targets | sed -n 's/^*.*"\(.*\)" prio=.*$/\1/p')
-    VOLUME=$(pactl list sinks | sed -n "/${SINK}/,/Volume/ s!^[[:space:]]\+Volume:.* \([[:digit:]]\+\)%.*!\1!p")
-    IS_MUTED=$(pactl list sinks | sed -n "/${SINK}/,/Mute/ s/Mute: \(yes\)/\1/p")
+    DEFAULT_SOURCE=$(pw-record --list-targets | sed -n 's/^*[[:space:]]*[[:digit:]]\+: description="\(.*\)" prio=[[:digit:]]\+$/\1/p')
+    DEFAULT_SINK_ID=$(pw-play --list-targets | sed -n 's/^*[[:space:]]*\([[:digit:]]\+\):.*$/\1/p')
+    DEFAULT_SINK=$(pw-play --list-targets | sed -n 's/^*[[:space:]]*[[:digit:]]\+: description="\(.*\)" prio=[[:digit:]]\+$/\1/p')
+    VOLUME=$(pamixer --get-volume-human)
 
     action=$1
     if [ "${action}" == "up" ]; then
-        pactl set-sink-volume @DEFAULT_SINK@ +10%
+        pamixer --increase 10
     elif [ "${action}" == "down" ]; then
-        pactl set-sink-volume @DEFAULT_SINK@ -10%
+        pamixer --decrease 10
     elif [ "${action}" == "mute" ]; then
-        pactl set-sink-mute @DEFAULT_SINK@ toggle
+        pamixer --toggle-mute
     else
-        if [ "${IS_MUTED}" != "" ]; then
-            echo "  MUTED "
-        else
-            echo "  ${VOLUME}%"
-        fi
+        echo " ${VOLUME}"
     fi
 }
 
-main $@
+main "$@"
+
