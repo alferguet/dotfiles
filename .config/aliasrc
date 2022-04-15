@@ -2,7 +2,8 @@
 
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
-alias ls='ls --color=auto'
+alias l='ls --color=auto'
+alias ll='ls -l --color=auto'
 alias xin='doas xbps-install -S'
 alias xup='doas xbps-install -Suv'
 alias xq='doas xbps-query'
@@ -20,12 +21,15 @@ alias poweroff='doas poweroff'
 alias vi='nvim'
 alias tmux='tmux -f ${HOME}/.config/tmux/.tmux.conf'
 alias nnn='nnn -e -C'
+alias vscode='code-oss'
 
 alias gl='git log --oneline --decorate --graph --all'
 
 alias doco='docker-compose'
 
 alias rt='rtorrent -d /mnt/storage/downloads'
+
+alias cal='cal -m'
 
 
 # Functions

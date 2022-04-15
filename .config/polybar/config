@@ -22,14 +22,14 @@ transparent = #00000000
 
 [paddings]
 inner = 1
-outer = 2
+outer = 1
 
 ;---------------------------------------
 ;	TOP BAR
 ;---------------------------------------
 
 [bar/top]
-monitor = HDMI-A-0
+monitor = DisplayPort-0
 fixed-center = true
 width = 100%
 height = 28
@@ -45,16 +45,16 @@ wm-restack = bspwm
 
 ;---------------------------------------
 
-font-0 = JetBrains Mono:size=8;2
-font-1 = FontAwesome5FreeSolid:size=8;2
-font-2 = FontAwesome5FreeRegular:size=8;2
-font-3 = FontAFF5555:size=8;2
+font-0 = JetBrains Mono:style=Bold:size=8;2
+font-1 = Noto Sans CJK JP:size=8;2
+font-2 = FontAwesome5FreeSolid:size=8;2
+font-3 = FontAwesome5FreeRegular:size=8;2
 
 ;---------------------------------------
 
-modules-left = time date cmus
-modules-center = bspwm 
-modules-right = eth memory cpu temperature pipewire power
+modules-left = bspwm 
+modules-center = cmus 
+modules-right = eth cpu pipewire time date power
 
 ;---------------------------------------
 
@@ -163,7 +163,7 @@ interval = 1
 
 format-connected-background = ${colors.background}
 format-connected-padding = ${paddings.outer}
-label-connected = %{A1:networkmanager_dmenu:}%{A}%downspeed:8% %upspeed:8%
+label-connected = %downspeed:8% %upspeed:8%
 
 ;---------------------------------------
 ;	TEMPERATURE MODULE
@@ -196,6 +196,7 @@ label-warn-padding-right = ${paddings.outer}
 type = internal/cpu
 interval = 0.5
 
+label-font = 1
 format = <label>
 format-background = ${colors.background}
 format-padding = ${paddings.inner}
@@ -235,7 +236,7 @@ format-foreground = ${colors.blue}
 [module/pipewire]
 type = custom/script
 label = "%output%"
-label-font = 2
+label-font = 1
 interval = 0.5
 exec = ~/.config/polybar/plugins/sound.sh
 click-right = exec pavucontrol &
