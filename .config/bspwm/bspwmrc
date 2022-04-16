@@ -9,7 +9,7 @@ $HOME/.config/.screenlayout/dual.sh
 bspc monitor DisplayPort-0 -d I II III IV V VI
 bspc monitor HDMI-A-0 -d VII VIII
 
-bspc wm -O DisplayPort-0 HDMI-A-0
+enforce_monitor_position DisplayPort-0 '^1' &
 
 setxkbmap -layout us altgr-intl
 
