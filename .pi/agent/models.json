@@ -1,0 +1,10 @@
+{
+  "providers": {
+    "llama-cpp": {
+      "baseUrl": "http://127.0.0.1:8080/v1",
+      "api": "openai-completions",
+      "apiKey": "ignored",
+      "models": [{ "id": "Qwen_Qwen3.5-9B-GGUF:Q4_K_M"}]
+    }
+  }
+}
