@@ -1,0 +1,13 @@
+version = 2
+
+[global]
+allow_fp16 = true
+
+[[profile]]
+active_in = "/home/sloth/.local/share/Steam/steamapps/common/Train Sim World 6/WindowsNoEditor/TS2Prototype/Binaries/Win64/TrainSimWorld.exe"
+flow_scale = 1.0
+gpu = "NVIDIA GeForce RTX 4080 SUPER"
+multiplier = 2
+name = "x2 TSW"
+pacing = "none"
+performance_mode = false

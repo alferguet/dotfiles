@@ -1,0 +1,10 @@
+#!/bin/sh 
+
+alias mp3="youtube-dl -x --embed-thumbnail --audio-format mp3"
+alias vi='nvim'
+alias tdl="tiddl download url"
+alias vscode="vscodium"
+alias vc="vscodium"
+alias llm-gemma="llama-server -hf unsloth/gemma-4-12B-it-qat-GGUF:UD-Q4_K_XL -hfd Janvitos/gemma-4-12B-it-qat-assistant-MTP-Q8_0-GGUF --spec-type draft-mtp --spec-draft-n-max 4 --parallel 1 --ctx-size 131072 --temp 1.0 --top-p 0.95 --top-k 64 --host 0.0.0.0"
+alias llm-qwen="llama-server -hf unsloth/Qwen3.5-9B-MTP-GGUF:UD-Q4_K_XL --spec-type draft-mtp --spec-draft-n-max 4 --parallel 1 --ctx-size 131072 --temp 1.0 --top-p 0.95 --top-k 64 --host 0.0.0.0"
+
